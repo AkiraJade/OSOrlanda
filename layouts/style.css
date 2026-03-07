@@ -1,0 +1,431 @@
+:root {
+    --primary-color: #9b59b6;
+    --secondary-color: #8e44ad;
+    --accent-color: #a569bd;
+    --text-color: #ffffff;
+    --text-muted: #b8b8b8;
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #2d2d2d;
+    --border-color: #404040;
+    --gradient-1: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    --gradient-2: linear-gradient(135deg, #a569bd 0%, #9b59b6 100%);
+    --shadow-glow: 0 0 20px rgba(155, 89, 182, 0.3);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(155, 89, 182, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(142, 68, 173, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(165, 105, 189, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(155, 89, 182, 0.03) 0%, rgba(142, 68, 173, 0.05) 100%);
+    background-attachment: fixed;
+    background-size: cover, cover;
+    min-height: 100vh;
+}
+
+.main-title {
+    color: var(--primary-color);
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(155, 89, 182, 0.5);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.tracking-wider {
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* Keep header (and nav dropdowns) above main content */
+#header {
+    position: relative;
+    z-index: 1100;
+}
+
+/* Main content must sit below header/nav so dropdowns overlay correctly */
+main,
+.about-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navigation customization */
+.navbar {
+    position: relative;
+    z-index: 1100;
+    padding: 1.5rem 0;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-card);
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    color: var(--text-muted) !important;
+    letter-spacing: 0.05em;
+    padding: 0.75rem 1.25rem !important;
+    margin: 0 0.25rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-color) !important;
+    background: var(--gradient-1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+}
+
+/* Dropdown customization */
+.dropdown-menu {
+    z-index: 1110;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-card);
+    margin-top: 0.75rem;
+    padding: 0.75rem 0;
+    max-height: 350px;
+    overflow-y: auto;
+    background: rgba(45, 45, 45, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 12px;
+}
+
+.dropdown-item {
+    padding: 0.875rem 1.5rem;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    margin: 0.25rem 0.5rem;
+    font-weight: 400;
+}
+
+.dropdown-item:hover {
+    background: var(--gradient-2);
+    color: var(--text-color);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.2);
+}
+
+.dropdown-item i {
+    color: var(--accent-color);
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+/* Main content customization */
+h2.display-6 {
+    color: var(--text-color);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h2.display-6::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-1);
+    border-radius: 2px;
+}
+
+.lead {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Card customization */
+.card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(45, 45, 45, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(155, 89, 182, 0.3) !important;
+    border-color: var(--accent-color);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(165, 105, 189, 0.5));
+}
+
+/* YouTube video styling */
+.ratio iframe {
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s ease;
+}
+
+.ratio iframe:hover {
+    box-shadow: 0 12px 24px rgba(155, 89, 182, 0.3);
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        border: 1px solid var(--border-color);
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem !important;
+        margin: 0 !important;
+        text-align: left;
+    }
+    
+    .dropdown-menu {
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-secondary);
+        padding-left: 1rem;
+    }
+    
+    .dropdown-item {
+        padding: 0.5rem 1rem;
+    }
+    
+    .navbar-toggler {
+        border: 2px solid var(--accent-color);
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba(155, 89, 182, 0.3);
+    }
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .display-6 {
+        font-size: 1.5rem;
+    }
+    
+    .dropdown-menu {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+}
+
+/* Add subtle animations */
+.card-body {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-body {
+    transform: scale(1.02);
+}
+
+/* Add decorative elements */
+header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 1rem auto;
+}
+
+/* Style active dropdown */
+.dropdown-toggle[aria-expanded="true"] {
+    color: var(--accent-color) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Smooth scrolling for dropdown menus on mobile */
+.dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
+}
+
+/* Additional dark theme styling */
+.card-text {
+    color: var(--text-muted) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.lead {
+    color: var(--text-muted) !important;
+}
+
+.display-4 {
+    color: var(--text-color) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color) !important;
+}
+
+p, li, span {
+    color: var(--text-muted) !important;
+}
+
+/* Ensure navbar toggler is visible in dark mode */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Enhanced animations and micro-interactions */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Enhanced button styling */
+.btn-primary {
+    background: var(--gradient-1);
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
+    background: var(--gradient-2);
+}
+
+/* Enhanced container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced focus states */
+.nav-link:focus,
+.btn:focus,
+.card:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading {
+    background: linear-gradient(90deg, var(--bg-card) 0%, var(--bg-secondary) 50%, var(--bg-card) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Footer - dark theme */
+footer.bg-dark {
+    background-color: var(--bg-secondary) !important;
+    border-top: 1px solid var(--border-color);
+    margin-top: 3rem;
+}
+
+footer.bg-dark .text-white,
+footer.bg-dark small {
+    color: var(--text-muted) !important;
+}
