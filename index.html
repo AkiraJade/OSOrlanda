@@ -232,10 +232,168 @@
                 transform: scale(1);
             }
         }
+
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #333;
+            transition: transform 0.1s ease-out;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #333;
+            opacity: 0.5;
+            transition: transform 0.1s ease-out;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #333;
+            opacity: 0.2;
+            transition: transform 0.1s ease-out;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .theme-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .theme-btn.active {
+            background-color: #666;
+        }
+
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/2000/1000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+
+        .card-3d {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .card-3d-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card-3d-flip {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .card-3d-flip-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+        }
+
+        .flipped .card-3d-flip-inner {
+            transform: rotateY(180deg);
+        }
+
+        .magnetic-element {
+            transition: transform 0.5s;
+        }
+
+        .magnetic-element:hover {
+            transform: scale(1.1);
+        }
+
+        .parallax-element {
+            position: relative;
+            background-image: url('https://picsum.photos/2000/1000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 
 <body>
+    <!-- Advanced cursor elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-trail"></div>
+    
+    <!-- Dynamic theme switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn theme-purple active" data-theme="purple" title="Purple Theme"></button>
+        <button class="theme-btn theme-blue" data-theme="blue" title="Blue Theme"></button>
+        <button class="theme-btn theme-green" data-theme="green" title="Green Theme"></button>
+        <button class="theme-btn theme-pink" data-theme="pink" title="Pink Theme"></button>
+        <button class="theme-btn theme-orange" data-theme="orange" title="Orange Theme"></button>
+        <button class="theme-btn theme-red" data-theme="red" title="Red Theme"></button>
+    </div>
+    
+    <!-- Parallax background layers -->
+    <div class="parallax-bg"></div>
+    
     <!-- Advanced particle background -->
     <div class="particles-container">
         <div class="particle particle-1"></div>
@@ -273,63 +431,236 @@
 
         <div class="row mt-5">
             <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm animate-card-hover">
-                    <div class="card-body text-center">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-cpu feature-icon"></i>
+                <div class="card-3d">
+                    <div class="card-3d-inner">
+                        <div class="card h-100 border-0 shadow-sm animate-card-hover magnetic-element">
+                            <div class="card-body text-center">
+                                <div class="icon-wrapper">
+                                    <i class="bi bi-cpu feature-icon"></i>
+                                </div>
+                                <h5 class="card-title mt-3">Resource Management</h5>
+                                <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
+                                    Efficiently allocates and manages hardware resources like CPU, memory, and storage for
+                                    smooth system operation.</p>
+                            </div>
                         </div>
-                        <h5 class="card-title mt-3">Resource Management</h5>
-                        <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
-                            Efficiently allocates and manages hardware resources like CPU, memory, and storage for
-                            smooth system operation.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm animate-card-hover">
-                    <div class="card-body text-center">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-person-workspace feature-icon"></i>
+                <div class="card-3d">
+                    <div class="card-3d-inner">
+                        <div class="card h-100 border-0 shadow-sm animate-card-hover magnetic-element">
+                            <div class="card-body text-center">
+                                <div class="icon-wrapper">
+                                    <i class="bi bi-person-workspace feature-icon"></i>
+                                </div>
+                                <h5 class="card-title mt-3">User Interface</h5>
+                                <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
+                                    It provides a graphical or command-based interface, allowing users to interact with the
+                                    computer easily</p>
+                            </div>
                         </div>
-                        <h5 class="card-title mt-3">User Interface</h5>
-                        <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
-                            It provides a graphical or command-based interface, allowing users to interact with the
-                            computer easily</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm animate-card-hover">
-                    <div class="card-body text-center">
-                        <div class="icon-wrapper">
-                            <i class="bi bi-windows feature-icon"></i>
+                <div class="card-3d-flip" id="flipCard">
+                    <div class="card-3d-flip-inner">
+                        <div class="card-front">
+                            <div class="card h-100 border-0 shadow-sm animate-card-hover magnetic-element">
+                                <div class="card-body text-center">
+                                    <div class="icon-wrapper">
+                                        <i class="bi bi-windows feature-icon"></i>
+                                    </div>
+                                    <h5 class="card-title mt-3">Software Execution</h5>
+                                    <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
+                                        Enables applications to run by handling processes, multitasking, and ensuring compatibility
+                                        between software and hardware</p>
+                                    <button class="btn btn-primary mt-3" onclick="document.getElementById('flipCard').classList.toggle('flipped')">
+                                        Learn More
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <h5 class="card-title mt-3">Software Execution</h5>
-                        <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
-                            Enables applications to run by handling processes, multitasking, and ensuring compatibility
-                            between software and hardware</p>
+                        <div class="card-back">
+                            <div>
+                                <i class="bi bi-gear-fill" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <h3>Advanced Features</h3>
+                                <p>Process scheduling, memory management, device drivers, and system security protocols work together to create a seamless computing experience.</p>
+                                <button class="btn btn-light mt-3" onclick="document.getElementById('flipCard').classList.toggle('flipped')">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="ratio ratio-16x9 mt-5 mb-5 animate-video">
+        <div class="ratio ratio-16x9 mt-5 mb-5 animate-video parallax-element">
             <iframe src="https://www.youtube.com/embed/GjNp0bBrjmU" title="Operating Systems YouTube video"
                 allowfullscreen></iframe>
-        </div>
-    </main>
 
-    <div id="footer"></div>
+        <div id="footer"></div>
 
-    <script>
-        fetch('layouts/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
+        <script>
+            fetch('layouts/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        </script>
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Advanced Interactive JavaScript -->
+        <script>
+            // Advanced cursor effects
+            const cursorDot = document.querySelector('.cursor-dot');
+            const cursorRing = document.querySelector('.cursor-ring');
+            const cursorTrail = document.querySelector('.cursor-trail');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+            
+            // Mouse movement handler
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                // Update cursor positions
+                cursorDot.style.left = mouseX + 'px';
+                cursorDot.style.top = mouseY + 'px';
+                cursorRing.style.left = mouseX + 'px';
+                cursorRing.style.top = mouseY + 'px';
+                
+                // Add trail effect
+                const trailDot = document.createElement('div');
+                trailDot.className = 'cursor-trail-dot';
+                trailDot.style.left = mouseX + 'px';
+                trailDot.style.top = mouseY + 'px';
+                document.body.appendChild(trailDot);
+                
+                setTimeout(() => {
+                    trailDot.remove();
+                }, 1000);
             });
-    </script>
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+            
+            // Smooth cursor animation
+            function animateCursor() {
+                cursorX += (mouseX - cursorX) * 0.1;
+                cursorY += (mouseY - cursorY) * 0.1;
+                
+                cursorRing.style.left = cursorX + 'px';
+                cursorRing.style.top = cursorY + 'px';
+                
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+            
+            // Hover effects for interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .card, .nav-link');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    document.body.classList.add('cursor-hover');
+                });
+                element.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('cursor-hover');
+                });
+            });
+            
+            // Theme switcher functionality
+            const themeButtons = document.querySelectorAll('.theme-btn');
+            const body = document.body;
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme') || 'purple';
+            body.setAttribute('data-theme', savedTheme);
+            
+            themeButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-theme') === savedTheme) {
+                    btn.classList.add('active');
+                }
+                
+                btn.addEventListener('click', () => {
+                    const theme = btn.getAttribute('data-theme');
+                    body.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                    
+                    // Update active button
+                    themeButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Add transition effect
+                    body.style.transition = 'all 0.3s ease';
+                    setTimeout(() => {
+                        body.style.transition = '';
+                    }, 300);
+                });
+            });
+            
+            // Magnetic hover effects
+            const magneticElements = document.querySelectorAll('.magnetic-element');
+            
+            magneticElements.forEach(element => {
+                element.addEventListener('mousemove', (e) => {
+                    const rect = element.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    element.style.setProperty('--mouse-x', `${x * 0.3}px`);
+                    element.style.setProperty('--mouse-y', `${y * 0.3}px`);
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    element.style.setProperty('--mouse-x', '0px');
+                    element.style.setProperty('--mouse-y', '0px');
+                });
+            });
+            
+            // Parallax scrolling effect
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            const parallaxBg = document.querySelector('.parallax-bg');
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                
+                parallaxElements.forEach((element, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+                
+                if (parallaxBg) {
+                    parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+                }
+            });
+            
+            // Enhanced card animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.card').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Hide cursor on mobile
+            if ('ontouchstart' in window) {
+                document.querySelectorAll('.cursor-dot, .cursor-ring, .cursor-trail').forEach(el => {
+                    el.style.display = 'none';
+                });
+            }
+        </script>
+    </body>
 
-</html>
+    </html>
