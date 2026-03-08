@@ -12,29 +12,230 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="layouts/style.css">
     <style>
-        /* Remove conflicting inline styles - using main CSS file instead */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #333;
+        }
+
+        .particle-1 {
+            top: 20%;
+            left: 30%;
+            animation: particle-1 10s linear infinite;
+        }
+
+        .particle-2 {
+            top: 40%;
+            left: 50%;
+            animation: particle-2 10s linear infinite;
+        }
+
+        .particle-3 {
+            top: 60%;
+            left: 20%;
+            animation: particle-3 10s linear infinite;
+        }
+
+        .particle-4 {
+            top: 80%;
+            left: 40%;
+            animation: particle-4 10s linear infinite;
+        }
+
+        .particle-5 {
+            top: 10%;
+            left: 60%;
+            animation: particle-5 10s linear infinite;
+        }
+
+        .particle-6 {
+            top: 50%;
+            left: 10%;
+            animation: particle-6 10s linear infinite;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #666;
+        }
+
+        .floating-1 {
+            top: 20%;
+            left: 40%;
+            animation: floating-1 10s linear infinite;
+        }
+
+        .floating-2 {
+            top: 60%;
+            left: 20%;
+            animation: floating-2 10s linear infinite;
+        }
+
+        .floating-3 {
+            top: 40%;
+            left: 60%;
+            animation: floating-3 10s linear infinite;
+        }
+
+        @keyframes particle-1 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, 100px);
+            }
+        }
+
+        @keyframes particle-2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100px, -100px);
+            }
+        }
+
+        @keyframes particle-3 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, -50px);
+            }
+        }
+
+        @keyframes particle-4 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-50px, 50px);
+            }
+        }
+
+        @keyframes particle-5 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, -100px);
+            }
+        }
+
+        @keyframes particle-6 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100px, 100px);
+            }
+        }
+
+        @keyframes floating-1 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(200px, 200px);
+            }
+        }
+
+        @keyframes floating-2 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-200px, -200px);
+            }
+        }
+
+        @keyframes floating-3 {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, -100px);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 2s;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-glow {
+            animation: glow 2s;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #fff;
+            }
+            100% {
+                text-shadow: 0 0 20px #fff;
+            }
+        }
+
+        .animate-slide-up {
+            animation: slide-up 2s;
+        }
+
+        @keyframes slide-up {
+            0% {
+                transform: translateY(100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .animate-card-hover {
+            transition: transform 0.5s;
+        }
+
+        .animate-card-hover:hover {
+            transform: scale(1.1);
+        }
+
+        .animate-video {
+            animation: video 2s;
+        }
+
+        @keyframes video {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Advanced cursor elements -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-    <div class="cursor-trail"></div>
-    
-    <!-- Dynamic theme switcher -->
-    <div class="theme-switcher">
-        <button class="theme-btn theme-purple active" data-theme="purple" title="Purple Theme"></button>
-        <button class="theme-btn theme-blue" data-theme="blue" title="Blue Theme"></button>
-        <button class="theme-btn theme-green" data-theme="green" title="Green Theme"></button>
-        <button class="theme-btn theme-pink" data-theme="pink" title="Pink Theme"></button>
-        <button class="theme-btn theme-orange" data-theme="orange" title="Orange Theme"></button>
-        <button class="theme-btn theme-red" data-theme="red" title="Red Theme"></button>
-    </div>
-    
-    <!-- Parallax background layers -->
-    <div class="parallax-bg"></div>
-    
     <!-- Advanced particle background -->
     <div class="particles-container">
         <div class="particle particle-1"></div>
@@ -72,74 +273,47 @@
 
         <div class="row mt-5">
             <div class="col-md-4 mb-4">
-                <div class="card-3d">
-                    <div class="card-3d-inner">
-                        <div class="card h-100 border-0 shadow-sm animate-card-hover magnetic-element">
-                            <div class="card-body text-center">
-                                <div class="icon-wrapper">
-                                    <i class="bi bi-cpu feature-icon"></i>
-                                </div>
-                                <h5 class="card-title mt-3">Resource Management</h5>
-                                <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
-                                    Efficiently allocates and manages hardware resources like CPU, memory, and storage for
-                                    smooth system operation.</p>
-                            </div>
+                <div class="card h-100 border-0 shadow-sm animate-card-hover">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-cpu feature-icon"></i>
                         </div>
+                        <h5 class="card-title mt-3">Resource Management</h5>
+                        <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
+                            Efficiently allocates and manages hardware resources like CPU, memory, and storage for
+                            smooth system operation.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card-3d">
-                    <div class="card-3d-inner">
-                        <div class="card h-100 border-0 shadow-sm animate-card-hover magnetic-element">
-                            <div class="card-body text-center">
-                                <div class="icon-wrapper">
-                                    <i class="bi bi-person-workspace feature-icon"></i>
-                                </div>
-                                <h5 class="card-title mt-3">User Interface</h5>
-                                <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
-                                    It provides a graphical or command-based interface, allowing users to interact with the
-                                    computer easily</p>
-                            </div>
+                <div class="card h-100 border-0 shadow-sm animate-card-hover">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-person-workspace feature-icon"></i>
                         </div>
+                        <h5 class="card-title mt-3">User Interface</h5>
+                        <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
+                            It provides a graphical or command-based interface, allowing users to interact with the
+                            computer easily</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card-3d-flip" id="flipCard">
-                    <div class="card-3d-flip-inner">
-                        <div class="card-front">
-                            <div class="card h-100 border-0 shadow-sm animate-card-hover magnetic-element">
-                                <div class="card-body text-center">
-                                    <div class="icon-wrapper">
-                                        <i class="bi bi-windows feature-icon"></i>
-                                    </div>
-                                    <h5 class="card-title mt-3">Software Execution</h5>
-                                    <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
-                                        Enables applications to run by handling processes, multitasking, and ensuring compatibility
-                                        between software and hardware</p>
-                                    <button class="btn btn-primary mt-3" onclick="document.getElementById('flipCard').classList.toggle('flipped')">
-                                        Learn More
-                                    </button>
-                                </div>
-                            </div>
+                <div class="card h-100 border-0 shadow-sm animate-card-hover">
+                    <div class="card-body text-center">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-windows feature-icon"></i>
                         </div>
-                        <div class="card-back">
-                            <div>
-                                <i class="bi bi-gear-fill" style="font-size: 3rem; margin-bottom: 1rem;"></i>
-                                <h3>Advanced Features</h3>
-                                <p>Process scheduling, memory management, device drivers, and system security protocols work together to create a seamless computing experience.</p>
-                                <button class="btn btn-light mt-3" onclick="document.getElementById('flipCard').classList.toggle('flipped')">
-                                    Back
-                                </button>
-                            </div>
-                        </div>
+                        <h5 class="card-title mt-3">Software Execution</h5>
+                        <p class="card-text text-muted" style="justify-content: center; text-align: justify;">
+                            Enables applications to run by handling processes, multitasking, and ensuring compatibility
+                            between software and hardware</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="ratio ratio-16x9 mt-5 mb-5 animate-video parallax-element">
+        <div class="ratio ratio-16x9 mt-5 mb-5 animate-video">
             <iframe src="https://www.youtube.com/embed/GjNp0bBrjmU" title="Operating Systems YouTube video"
                 allowfullscreen></iframe>
         </div>
@@ -156,154 +330,6 @@
     </script>
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Advanced Interactive JavaScript -->
-    <script>
-        // Advanced cursor effects
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorRing = document.querySelector('.cursor-ring');
-        const cursorTrail = document.querySelector('.cursor-trail');
-        let mouseX = 0, mouseY = 0;
-        let cursorX = 0, cursorY = 0;
-        
-        // Mouse movement handler
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Update cursor positions
-            cursorDot.style.left = mouseX + 'px';
-            cursorDot.style.top = mouseY + 'px';
-            cursorRing.style.left = mouseX + 'px';
-            cursorRing.style.top = mouseY + 'px';
-            
-            // Add trail effect
-            const trailDot = document.createElement('div');
-            trailDot.className = 'cursor-trail-dot';
-            trailDot.style.left = mouseX + 'px';
-            trailDot.style.top = mouseY + 'px';
-            document.body.appendChild(trailDot);
-            
-            setTimeout(() => {
-                trailDot.remove();
-            }, 1000);
-        });
-        
-        // Smooth cursor animation
-        function animateCursor() {
-            cursorX += (mouseX - cursorX) * 0.1;
-            cursorY += (mouseY - cursorY) * 0.1;
-            
-            cursorRing.style.left = cursorX + 'px';
-            cursorRing.style.top = cursorY + 'px';
-            
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-        
-        // Hover effects for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .card, .nav-link');
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                document.body.classList.add('cursor-hover');
-            });
-            element.addEventListener('mouseleave', () => {
-                document.body.classList.remove('cursor-hover');
-            });
-        });
-        
-        // Theme switcher functionality
-        const themeButtons = document.querySelectorAll('.theme-btn');
-        const body = document.body;
-        
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'purple';
-        body.setAttribute('data-theme', savedTheme);
-        
-        themeButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-theme') === savedTheme) {
-                btn.classList.add('active');
-            }
-            
-            btn.addEventListener('click', () => {
-                const theme = btn.getAttribute('data-theme');
-                body.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                
-                // Update active button
-                themeButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                // Add transition effect
-                body.style.transition = 'all 0.3s ease';
-                setTimeout(() => {
-                    body.style.transition = '';
-                }, 300);
-            });
-        });
-        
-        // Magnetic hover effects
-        const magneticElements = document.querySelectorAll('.magnetic-element');
-        
-        magneticElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                element.style.setProperty('--mouse-x', `${x * 0.3}px`);
-                element.style.setProperty('--mouse-y', `${y * 0.3}px`);
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                element.style.setProperty('--mouse-x', '0px');
-                element.style.setProperty('--mouse-y', '0px');
-            });
-        });
-        
-        // Parallax scrolling effect
-        const parallaxElements = document.querySelectorAll('.parallax-element');
-        const parallaxBg = document.querySelector('.parallax-bg');
-        
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            
-            parallaxElements.forEach((element, index) => {
-                const speed = 0.5 + (index * 0.1);
-                element.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-            
-            if (parallaxBg) {
-                parallaxBg.style.transform = `translateY(${scrolled * 0.3}px)`;
-            }
-        });
-        
-        // Enhanced card animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
-        });
-        
-        // Hide cursor on mobile
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.cursor-dot, .cursor-ring, .cursor-trail').forEach(el => {
-                el.style.display = 'none';
-            });
-        }
-    </script>
 </body>
 
 </html>
