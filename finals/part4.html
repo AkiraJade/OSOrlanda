@@ -28,8 +28,29 @@
         <div class="text-center mb-5">
             <h2 class="display-6 fw-bold mb-4">PART 4: FILE SHARING</h2>
             <p class="lead text-muted" style="justify-content: center; text-align: justify;">
-                File sharing in Windows Server 2008 allows users and administrators to store, access, and manage files across a network efficiently. This is typically configured using shared folders and NTFS permissions to control access. The File Services role can be installed via Server Manager, enabling features like DFS (Distributed File System) for centralized file management and replication across multiple servers.<br>
+                <strong>Network File Sharing Configuration for TUP-Taguig Departments</strong><br><br>
+                
+                This video demonstrates the comprehensive setup of network file sharing services on Windows Server 2008 for all TUP-Taguig departments and offices. The configuration ensures secure, organized, and efficient file management across the university network while maintaining proper access controls and storage quotas.
+                <br><br>
+                
+                <strong>File Sharing Structure:</strong><br>
+                • <strong>Department Folders:</strong> Each department/section has a dedicated public folder with read/write access, restricted to authorized department users only<br>
+                • <strong>University Public Folder:</strong> Central repository accessible to all domain users for cross-department collaboration<br>
+                • <strong>Installer Folder:</strong> Application repository with administrator-only access for software distribution<br><br>
+                
+                <strong>Access Controls & Restrictions:</strong><br>
+                • <strong>File Type Restrictions:</strong> Most folders allow only office documents (.ppt, .doc, .docx, .xls, .xlsx, .pdf)<br>
+                • <strong>IT Department Exception:</strong> Information Technology folder allows all file types except executables for development purposes<br>
+                • <strong>Storage Quotas:</strong> Each folder limited to 1GB to ensure fair resource allocation<br>
+                • <strong>Mapped Drives:</strong> Shared folders automatically mapped for each client workstation based on user department<br><br>
+                
+                The implementation ensures data security while facilitating efficient collaboration within and between departments.
             </p>
+        </div>
+
+        <div class="ratio ratio-16x9 mt-5 mb-5">
+            <iframe src="https://www.youtube.com/embed/CEEu7mp2Ci4" title="Part 4: File Sharing"    
+                allowfullscreen></iframe>
         </div>
     </main>
 

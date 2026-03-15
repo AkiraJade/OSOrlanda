@@ -28,8 +28,50 @@
         <div class="text-center mb-5">
             <h2 class="display-6 fw-bold mb-4">PART 8: GROUP POLICIES</h2>
             <p class="lead text-muted" style="justify-content: center; text-align: justify;">
-                Group Policy is a powerful feature in Windows Server 2008 that allows administrators to centrally manage user and computer settings across a domain. It enforces security configurations, deploys software, and controls system and application behaviors through Group Policy Objects (GPOs).<br>
+                <strong>Comprehensive Group Policy Implementation for TUP-Taguig Network Security</strong><br><br>
+                
+                This video demonstrates the extensive configuration of Group Policy Objects (GPOs) to enforce security policies, user restrictions, and standardized desktop environments across all TUP-Taguig workstations. Group Policies provide centralized management of user and computer settings, ensuring consistent security and operational standards throughout the university network.
+                <br><br>
+                
+                <strong>Desktop Customization:</strong><br>
+                • Department-specific desktop wallpapers for visual identification<br>
+                • Customized Internet Explorer title bar showing domain name (tupt.edu.ph)<br><br>
+                
+                <strong>Security Restrictions:</strong><br>
+                • <strong>Control Panel Access:</strong> Prohibited for users, accessible only by administrators<br>
+                • <strong>Command Prompt:</strong> Disabled for users to prevent unauthorized system access<br>
+                • <strong>Registry Editing:</strong> Blocked for users to prevent system modifications<br>
+                • <strong>Removable Storage:</strong> All USB and external storage devices denied for data security<br>
+                • <strong>Software Installation:</strong> Users prohibited from installing applications<br>
+                • <strong>Guest Account:</strong> Disabled across all workstations<br><br>
+                
+                <strong>Password Policies:</strong><br>
+                • Minimum password length: 12 characters<br>
+                • Maximum password age: 42 days (enhanced from 30 days)<br>
+                • LAN Manager hash disabled on password changes<br>
+                • Account lockout: 3 invalid attempts triggers 30-minute lockout<br><br>
+                
+                <strong>Start Menu Restrictions:</strong><br>
+                • Windows Update: Disabled for users, enabled for admins<br>
+                • Network Connections: Removed from user start menu<br>
+                • Help Menu: Removed from user start menu<br>
+                • Run Command: Removed from user start menu<br>
+                • My Pictures/Music/Network Places: Removed from user start menu<br>
+                • Logoff: Added to start menu for all users<br>
+                • Task Manager: Disabled for users via Ctrl+Alt+Del<br><br>
+                
+                <strong>Administrative Controls:</strong><br>
+                • Directory service access auditing enabled and restricted to IT admins<br>
+                • Automatic updates configured without user restarts<br>
+                • Network connection properties restricted for users<br><br>
+                
+                The implementation ensures a secure, standardized, and controlled computing environment across all TUP-Taguig workstations.
             </p>
+        </div>
+
+        <div class="ratio ratio-16x9 mt-5 mb-5">
+            <iframe src="https://www.youtube.com/embed/MOBhJS_3l4s" title="Part 8: Group Policies"    
+                allowfullscreen></iframe>
         </div>
     </main>
 

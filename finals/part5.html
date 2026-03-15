@@ -26,10 +26,29 @@
 
     <main class="mx-auto" style="max-width: 800px;">
         <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold mb-4">PART 5: RAID</h2>
+            <h2 class="display-6 fw-bold mb-4">PART 5: RAID CONFIGURATION</h2>
             <p class="lead text-muted" style="justify-content: center; text-align: justify;">
-                RAID (Redundant Array of Independent Disks) is a storage technology that combines multiple physical disks into a single logical unit to improve performance, redundancy, or both. Windows Server 2008 supports software-based RAID (managed by the OS) and works with hardware RAID (managed by a dedicated controller). <br>
+                <strong>RAID Implementation for TUP-Taguig Server Storage</strong><br><br>
+                
+                This video demonstrates the comprehensive implementation of various RAID (Redundant Array of Independent Disks) configurations on Windows Server 2008 to provide different levels of performance, redundancy, and storage capacity for the TUP-Taguig network infrastructure. Each RAID type serves specific purposes for different data storage requirements.
+                <br><br>
+                
+                <strong>RAID Configurations Implemented:</strong><br>
+                • <strong>RAID 0 (Striped):</strong> Performance-focused configuration that splits data across multiple disks for improved read/write speeds. Ideal for temporary files and non-critical data where speed is prioritized over redundancy.<br><br>
+                
+                • <strong>RAID 1 (Mirrored):</strong> High-redundancy configuration that creates exact copies of data on two disks. Provides complete data protection and fault tolerance for critical system files and important university data.<br><br>
+                
+                • <strong>Spanned Volume:</strong> Combines multiple disks into a single logical volume to maximize storage capacity. Useful for archiving and backup storage where performance is less critical than capacity.<br><br>
+                
+                • <strong>RAID 5:</strong> Balanced configuration providing both performance and redundancy using disk striping with distributed parity. Offers optimal combination of speed, fault tolerance, and storage efficiency for the main file server.<br><br>
+                
+                The implementation ensures data protection, optimal performance, and efficient storage utilization across the TUP-Taguig server infrastructure.
             </p>
+        </div>
+
+        <div class="ratio ratio-16x9 mt-5 mb-5">
+            <iframe src="https://www.youtube.com/embed/d5wrmD2dcao" title="Part 5: RAID"    
+                allowfullscreen></iframe>
         </div>
     </main>
 

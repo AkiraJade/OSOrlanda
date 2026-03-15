@@ -28,8 +28,25 @@
         <div class="text-center mb-5">
             <h2 class="display-6 fw-bold mb-4">PART 3: DHCP SERVER</h2>
             <p class="lead text-muted" style="justify-content: center; text-align: justify;">
-                A DHCP (Dynamic Host Configuration Protocol) server in Windows Server 2008 automatically assigns IP addresses, subnet masks, default gateways, and other network configuration parameters to client devices on a network. This eliminates the need for manual IP address assignment, reducing errors and simplifying network administration.<br>
+                <strong>DHCP Configuration for TUP-Taguig Network</strong><br><br>
+                
+                This video demonstrates the installation and configuration of DHCP (Dynamic Host Configuration Protocol) server role on Windows Server 2008 for the TUP-Taguig network infrastructure. The DHCP service automatically assigns IP addresses and network configuration parameters to client devices, eliminating manual IP assignment and reducing network administration overhead.
+                <br><br>
+                
+                <strong>Key DHCP Configuration Parameters:</strong><br>
+                • <strong>IP Address Blocks:</strong> 172.31.0.0/16 and 10.0.0.0/8 for comprehensive network coverage<br>
+                • <strong>Router IP:</strong> Configured as valid gateway address for proper network routing<br>
+                • <strong>DNS Servers:</strong> Primary DNS set to DHCP server IP, with Google DNS (8.8.8.8) and OpenDNS (208.67.222.222) as secondary servers for redundancy<br>
+                • <strong>IP Lease Duration:</strong> 8 hours to balance between efficiency and IP address management<br>
+                • <strong>IP Address Exclusions:</strong> First 30 and last 30 IP addresses reserved for network infrastructure and servers<br><br>
+                
+                The configuration ensures reliable network connectivity for all academic and administrative workstations while maintaining proper network segmentation and security.
             </p>
+        </div>
+
+        <div class="ratio ratio-16x9 mt-5 mb-5">
+            <iframe src="https://www.youtube.com/embed/Q0zQGicB8Kw" title="Part 3: DHCP Server"    
+                allowfullscreen></iframe>
         </div>
     </main>
 
